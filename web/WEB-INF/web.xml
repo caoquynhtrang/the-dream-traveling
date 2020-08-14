@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <context-param>
+        <param-name>log4j-config-location</param-name>
+        <param-value>WEB-INF/log4j.properties</param-value>
+    </context-param>
+    <filter>
+        <filter-name>FilterDispatcher</filter-name>
+        <filter-class>trangcq.filter.FilterDispatcher</filter-class>
+    </filter>
+    <filter>
+        <filter-name>CheckLoginRoleAdminFilter</filter-name>
+        <filter-class>trangcq.filter.CheckLoginRoleAdminFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>CheckLoginRoleUserFilter</filter-name>
+        <filter-class>trangcq.filter.CheckLoginRoleUserFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CheckLoginRoleUserFilter</filter-name>
+        <url-pattern>/userPage</url-pattern>
+        <url-pattern>/addItemToCart</url-pattern>
+        <url-pattern>/addDiscount</url-pattern>
+        <url-pattern>/updateTour</url-pattern>
+        <url-pattern>/deleteTour</url-pattern>
+        <url-pattern>/confirm-booking</url-pattern>
+        <url-pattern>/confirm</url-pattern>
+        <url-pattern>/view</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>CheckLoginRoleAdminFilter</filter-name>
+        <url-pattern>/createNewTour</url-pattern>
+        <url-pattern>/createTour</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>FilterDispatcher</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>

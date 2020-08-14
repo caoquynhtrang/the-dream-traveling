@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/Lab02__DreamTraveling">
+    <Resource auth="Container" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" name="SE1402" password="Tl7NQ_55-Vr6" type="javax.sql.DataSource" url="jdbc:sqlserver://den1.mssql8.gear.host;databaseName=lab2database" username="lab2database">
+    </Resource>
+</Context>
